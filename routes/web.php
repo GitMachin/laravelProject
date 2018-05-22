@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+Route::get('/datatables', function () {
+    return view('datatables');
+});
+
+Route::get('users', 'UserController@getList' )->name('users');
+Route::get('users.data', 'UserController@dtAjax' )->name('users.data');
+
