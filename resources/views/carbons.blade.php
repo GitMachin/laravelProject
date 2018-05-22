@@ -231,14 +231,14 @@ echo $dt->format('l jS \\of F Y h:i:s A');         // Thursday 25th of December 
 					echo "<br />";
 
 					echo "<h3>Comparison</h3>";
-echo Carbon::now()->tzName;                        // America/Toronto
+echo Carbon::now()->tzName. "<br />";                        // America/Toronto
 $first = Carbon::create(2012, 9, 5, 23, 26, 11);
 $second = Carbon::create(2012, 9, 5, 20, 26, 11, 'America/Vancouver');
 
-echo $first->toDateTimeString();                   // 2012-09-05 23:26:11
-echo $first->tzName;                               // America/Toronto
-echo $second->toDateTimeString();                  // 2012-09-05 20:26:11
-echo $second->tzName;                              // America/Vancouver
+echo $first->toDateTimeString(). "<br />";                    // 2012-09-05 23:26:11
+echo $first->tzName. "<br />";                                // America/Toronto
+echo $second->toDateTimeString(). "<br />";                   // 2012-09-05 20:26:11
+echo $second->tzName. "<br />";                               // America/Vancouver
 
 var_dump($first->eq($second));                     // bool(true)
 var_dump($first->ne($second));                     // bool(false)
@@ -287,57 +287,57 @@ var_dump($first <= $second);                       // bool(true)
 					echo "<h3>Addition and Subtraction</h3>";
 $dt = Carbon::create(2012, 1, 31, 0);
 
-echo $dt->toDateTimeString();            // 2012-01-31 00:00:00
+echo $dt->toDateTimeString(). "<br />";             // 2012-01-31 00:00:00
 
-echo $dt->addCenturies(5);               // 2512-01-31 00:00:00
-echo $dt->addCentury();                  // 2612-01-31 00:00:00
-echo $dt->subCentury();                  // 2512-01-31 00:00:00
-echo $dt->subCenturies(5);               // 2012-01-31 00:00:00
+echo $dt->addCenturies(5). "<br />";                // 2512-01-31 00:00:00
+echo $dt->addCentury(). "<br />";                   // 2612-01-31 00:00:00
+echo $dt->subCentury(). "<br />";                   // 2512-01-31 00:00:00
+echo $dt->subCenturies(5). "<br />";                // 2012-01-31 00:00:00
 
-echo $dt->addYears(5);                   // 2017-01-31 00:00:00
-echo $dt->addYear();                     // 2018-01-31 00:00:00
-echo $dt->subYear();                     // 2017-01-31 00:00:00
-echo $dt->subYears(5);                   // 2012-01-31 00:00:00
+echo $dt->addYears(5). "<br />";                    // 2017-01-31 00:00:00
+echo $dt->addYear(). "<br />";                      // 2018-01-31 00:00:00
+echo $dt->subYear(). "<br />";                     // 2017-01-31 00:00:00
+echo $dt->subYears(5)   . "<br />";                  // 2012-01-31 00:00:00
 
-echo $dt->addQuarters(2);                // 2012-07-31 00:00:00
-echo $dt->addQuarter();                  // 2012-10-31 00:00:00
-echo $dt->subQuarter();                  // 2012-07-31 00:00:00
-echo $dt->subQuarters(2);                // 2012-01-31 00:00:00
+echo $dt->addQuarters(2). "<br />";                // 2012-07-31 00:00:00
+echo $dt->addQuarter(). "<br />";                   // 2012-10-31 00:00:00
+echo $dt->subQuarter(). "<br />";                   // 2012-07-31 00:00:00
+echo $dt->subQuarters(2). "<br />";                 // 2012-01-31 00:00:00
 
-echo $dt->addMonths(60);                 // 2017-01-31 00:00:00
-echo $dt->addMonth();                    // 2017-03-03 00:00:00 equivalent of $dt->month($dt->month + 1); so it wraps
-echo $dt->subMonth();                    // 2017-02-03 00:00:00
-echo $dt->subMonths(60);                 // 2012-02-03 00:00:00
+echo $dt->addMonths(60). "<br />";                  // 2017-01-31 00:00:00
+echo $dt->addMonth(). "<br />";                    // 2017-03-03 00:00:00 equivalent of $dt->month($dt->month + 1); so it wraps
+echo $dt->subMonth(). "<br />";                     // 2017-02-03 00:00:00
+echo $dt->subMonths(60). "<br />";                  // 2012-02-03 00:00:00
 
-echo $dt->addDays(29);                   // 2012-03-03 00:00:00
-echo $dt->addDay();                      // 2012-03-04 00:00:00
-echo $dt->subDay();                      // 2012-03-03 00:00:00
-echo $dt->subDays(29);                   // 2012-02-03 00:00:00
+echo $dt->addDays(29). "<br />";                   // 2012-03-03 00:00:00
+echo $dt->addDay(). "<br />";                       // 2012-03-04 00:00:00
+echo $dt->subDay(). "<br />";                       // 2012-03-03 00:00:00
+echo $dt->subDays(29). "<br />";                  // 2012-02-03 00:00:00
 
-echo $dt->addWeekdays(4);                // 2012-02-09 00:00:00
-echo $dt->addWeekday();                  // 2012-02-10 00:00:00
-echo $dt->subWeekday();                  // 2012-02-09 00:00:00
-echo $dt->subWeekdays(4);                // 2012-02-03 00:00:00
+echo $dt->addWeekdays(4). "<br />";                 // 2012-02-09 00:00:00
+echo $dt->addWeekday(). "<br />";                   // 2012-02-10 00:00:00
+echo $dt->subWeekday(). "<br />";                   // 2012-02-09 00:00:00
+echo $dt->subWeekdays(4). "<br />";                // 2012-02-03 00:00:00
 
-echo $dt->addWeeks(3);                   // 2012-02-24 00:00:00
-echo $dt->addWeek();                     // 2012-03-02 00:00:00
-echo $dt->subWeek();                     // 2012-02-24 00:00:00
-echo $dt->subWeeks(3);                   // 2012-02-03 00:00:00
+echo $dt->addWeeks(3). "<br />";                   // 2012-02-24 00:00:00
+echo $dt->addWeek(). "<br />";                     // 2012-03-02 00:00:00
+echo $dt->subWeek(). "<br />";                     // 2012-02-24 00:00:00
+echo $dt->subWeeks(3). "<br />";                   // 2012-02-03 00:00:00
 
-echo $dt->addHours(24);                  // 2012-02-04 00:00:00
-echo $dt->addHour();                     // 2012-02-04 01:00:00
-echo $dt->subHour();                     // 2012-02-04 00:00:00
-echo $dt->subHours(24);                  // 2012-02-03 00:00:00
+echo $dt->addHours(24). "<br />";                  // 2012-02-04 00:00:00
+echo $dt->addHour(). "<br />";                     // 2012-02-04 01:00:00
+echo $dt->subHour(). "<br />";                     // 2012-02-04 00:00:00
+echo $dt->subHours(24). "<br />";                  // 2012-02-03 00:00:00
 
-echo $dt->addMinutes(61);                // 2012-02-03 01:01:00
-echo $dt->addMinute();                   // 2012-02-03 01:02:00
-echo $dt->subMinute();                   // 2012-02-03 01:01:00
-echo $dt->subMinutes(61);                // 2012-02-03 00:00:00
+echo $dt->addMinutes(61). "<br />";                // 2012-02-03 01:01:00
+echo $dt->addMinute(). "<br />";                   // 2012-02-03 01:02:00
+echo $dt->subMinute(). "<br />";                   // 2012-02-03 01:01:00
+echo $dt->subMinutes(61). "<br />";                // 2012-02-03 00:00:00
 
-echo $dt->addSeconds(61);                // 2012-02-03 00:01:01
-echo $dt->addSecond();                   // 2012-02-03 00:01:02
-echo $dt->subSecond();                   // 2012-02-03 00:01:01
-echo $dt->subSeconds(61);                // 2012-02-03 00:00:00
+echo $dt->addSeconds(61). "<br />";                // 2012-02-03 00:01:01
+echo $dt->addSecond(). "<br />";                   // 2012-02-03 00:01:02
+echo $dt->subSecond(). "<br />";                   // 2012-02-03 00:01:01
+echo $dt->subSeconds(61). "<br />";                // 2012-02-03 00:00:00
 
 
 					echo "<h3>Difference  </h3>";
@@ -345,51 +345,51 @@ echo Carbon::now('America/Vancouver')->diffInSeconds(Carbon::now('Europe/London'
 
 $dtOttawa = Carbon::createMidnightDate(2000, 1, 1, 'America/Toronto');
 $dtVancouver = Carbon::createMidnightDate(2000, 1, 1, 'America/Vancouver');
-echo $dtOttawa->diffInHours($dtVancouver);                             // 3
-echo $dtVancouver->diffInHours($dtOttawa);                             // 3
+echo $dtOttawa->diffInHours($dtVancouver). "<br />";                             // 3
+echo $dtVancouver->diffInHours($dtOttawa). "<br />";                             // 3
 
-echo $dtOttawa->diffInHours($dtVancouver, false);                      // 3
-echo $dtVancouver->diffInHours($dtOttawa, false);                      // -3
+echo $dtOttawa->diffInHours($dtVancouver, false). "<br />";                      // 3
+echo $dtVancouver->diffInHours($dtOttawa, false). "<br />";                      // -3
 
 $dt = Carbon::createMidnightDate(2012, 1, 31);
-echo $dt->diffInDays($dt->copy()->addMonth());                         // 31
-echo $dt->diffInDays($dt->copy()->subMonth(), false);                  // -31
+echo $dt->diffInDays($dt->copy()->addMonth()). "<br />";                         // 31
+echo $dt->diffInDays($dt->copy()->subMonth(), false). "<br />";                  // -31
 
 $dt = Carbon::createMidnightDate(2012, 4, 30);
-echo $dt->diffInDays($dt->copy()->addMonth());                         // 30
-echo $dt->diffInDays($dt->copy()->addWeek());                          // 7
+echo $dt->diffInDays($dt->copy()->addMonth()). "<br />";                         // 30
+echo $dt->diffInDays($dt->copy()->addWeek()). "<br />";                          // 7
 
 $dt = Carbon::createMidnightDate(2012, 1, 1);
-echo $dt->diffInMinutes($dt->copy()->addSeconds(59));                  // 0
-echo $dt->diffInMinutes($dt->copy()->addSeconds(60));                  // 1
-echo $dt->diffInMinutes($dt->copy()->addSeconds(119));                 // 1
-echo $dt->diffInMinutes($dt->copy()->addSeconds(120));                 // 2
+echo $dt->diffInMinutes($dt->copy()->addSeconds(59)). "<br />";                  // 0
+echo $dt->diffInMinutes($dt->copy()->addSeconds(60)). "<br />";                  // 1
+echo $dt->diffInMinutes($dt->copy()->addSeconds(119)). "<br />";                 // 1
+echo $dt->diffInMinutes($dt->copy()->addSeconds(120)). "<br />";                 // 2
 
-echo $dt->addSeconds(120)->secondsSinceMidnight();                     // 120
+echo $dt->addSeconds(120)->secondsSinceMidnight(). "<br />";                     // 120
  
 
 					echo "<h3>Difference for Humans</h3>";
 
 // The most typical usage is for comments
 // The instance is the date the comment was created and its being compared to default now()
-echo Carbon::now()->subDays(5)->diffForHumans();               // 5 days ago
+echo Carbon::now()->subDays(5)->diffForHumans(). "<br />";               // 5 days ago
 
-echo Carbon::now()->diffForHumans(Carbon::now()->subYear());   // 1 year after
+echo Carbon::now()->diffForHumans(Carbon::now()->subYear()). "<br />";   // 1 year after
 
 $dt = Carbon::createFromDate(2011, 8, 1);
 
-echo $dt->diffForHumans($dt->copy()->addMonth());                        // 1 month before
-echo $dt->diffForHumans($dt->copy()->subMonth());                        // 1 month after
+echo $dt->diffForHumans($dt->copy()->addMonth()). "<br />";                        // 1 month before
+echo $dt->diffForHumans($dt->copy()->subMonth()). "<br />";                        // 1 month after
 
-echo Carbon::now()->addSeconds(5)->diffForHumans();                      // 5 seconds from now
+echo Carbon::now()->addSeconds(5)->diffForHumans(). "<br />";                      // 5 seconds from now
 
-echo Carbon::now()->subDays(24)->diffForHumans();                        // 3 weeks ago
-echo Carbon::now()->subDays(24)->diffForHumans(null, true);              // 3 weeks
+echo Carbon::now()->subDays(24)->diffForHumans(). "<br />";                        // 3 weeks ago
+echo Carbon::now()->subDays(24)->diffForHumans(null, true). "<br />";              // 3 weeks
 
-echo Carbon::parse('2019-08-03')->diffForHumans('2019-08-13');           // 1 week before
-echo Carbon::parse('2000-01-01 00:50:32')->diffForHumans('@946684800');  // 5 hours after
+echo Carbon::parse('2019-08-03')->diffForHumans('2019-08-13'). "<br />";           // 1 week before
+echo Carbon::parse('2000-01-01 00:50:32')->diffForHumans('@946684800'). "<br />";  // 5 hours after
 
-echo Carbon::create(2018, 2, 26, 4, 29, 43)->diffForHumans(Carbon::create(2016, 6, 21, 0, 0, 0), false, false, 6); // 1 year 8 months 5 days 4 hours 29 minutes 43 seconds after
+echo Carbon::create(2018, 2, 26, 4, 29, 43)->diffForHumans(Carbon::create(2016, 6, 21, 0, 0, 0), false, false, 6). "<br />"; // 1 year 8 months 5 days 4 hours 29 minutes 43 seconds after
 					?>
                 </div>
             </div>

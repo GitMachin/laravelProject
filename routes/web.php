@@ -20,3 +20,10 @@ Route::get('/', function () {
 Route::get('/carbons', function () {
     return view('carbons');
 });
+Route::get('/datatables', function () {
+    return view('datatables');
+});
+
+Route::get('users', 'UserController@getList' )->name('users');
+Route::get('users.data', 'UserController@dtAjax' )->name('users.data');
+

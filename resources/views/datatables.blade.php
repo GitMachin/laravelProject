@@ -79,12 +79,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel Test Orel...
+                    Datatables
                 </div>
 
+               
                 <div class="links">
-                    <a href="http://laravelproject.test/carbons">Carbons</a> 
-                    <a href="http://laravelproject.test/datatables">Datatables</a> 
+                    <a href="http://laravelproject.test/users">Users</a> 
+					
+                    <a href="https://github.com/yajra/laravel-datatables">Doc</a> 
+					
                 </div>
             </div>
         </div>
