@@ -83,9 +83,8 @@
                 </div>
 				
                 <div class="links">
-				<a href="https://carbon.nesbot.com/docs/">Docs</a>
-					
-				</div>
+				<a href="https://carbon.nesbot.com/docs/">Docs</a> 
+				</div> 
 
                 <div class=" ">
 					<h2>Carbon TEST</h2>
