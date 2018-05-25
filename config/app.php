@@ -140,7 +140,12 @@ return [
 		/*
 		 * Package Service Providers...
 		 */
-
+		
+		/**
+		 * Kris\LaravelFormBuilder
+		 */
+		 Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
+	
 		/**
 		 * Collective\Html
 		 */

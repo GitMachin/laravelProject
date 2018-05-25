@@ -15,11 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
 Route::get('/carbons', function () {
     return view('carbons');
 });
+
+Route::get('/forms', function () {
+    return view('forms');
+});
+
 Route::get('/datatables', function () {
     return view('datatables');
 });
