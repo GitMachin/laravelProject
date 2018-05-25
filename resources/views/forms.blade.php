@@ -27,7 +27,7 @@
 
             .flex-center {
                 align-items: center;
-                display: flex;
+                /*display: flex;*/
                 justify-content: center;
             }
 
@@ -67,25 +67,31 @@
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
+			<div class="top-right links">
+				@auth
+				<a href="{{ url('/home') }}">Home</a>
+				@else
+				<a href="{{ route('login') }}">Login</a>
+				<a href="{{ route('register') }}">Register</a>
+				@endauth
+			</div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel Test Orel...
+                    Carbons
                 </div>
-
+				
                 <div class="links">
-                    <a href="http://laravelproject.test/forms">Forms</a> 
-                    <a href="http://laravelproject.test/carbons">Carbons</a> 
-                    <a href="http://laravelproject.test/datatables">Datatables</a> 
+				<a href="https://www.grafikart.fr/tutoriels/laravel/form-builder-999">Docs form-builder</a> 
+				<a href="https://laravelcollective.com/docs/master/html#installation">Docs laravelcollective</a> 
+				</div> 
+
+                <div class=" ">
+					<h2>Form TEST</h2>
+
+					<?php 
+					?>
                 </div>
             </div>
         </div>
