@@ -90,6 +90,13 @@
                 <div class=" ">
 					<h2>Form TEST</h2>
 
+                <div class="links">
+                    <a href="http://laravelproject.test/posts/create">Posts</a> 
+					
+                    <a href="http://laravelproject.test/users/create">Users</a> 
+					
+                </div>
+					
 					<?php 
 					?>
                 </div>
