@@ -2,24 +2,24 @@
 
 namespace App\Forms;
 
-//use Kris\LaravelFormBuilder\Form;
+use Kris\LaravelFormBuilder\Form;
 
-class PostForm extends Form
+class UserForm extends Form 
 {
-	protected $resource = 'posts';
+	protected $resource = 'users';
 	
-    public function buildForm()
+	public function buildForm()
     {
 		parent::buildForm( );
 		
         $this
 			->add($name ='name', $type='text', [
-				'label' => 'Titre',
+				'label' => 'Nom',
 				'rules' => 'required|min:5'
-			]  )
-			->add($name ='description', $type='textarea', [
-				'label' => 'Contenu',
-				'rules' => 'required|min:5'
+			] )
+			->add($name ='email', $type='email', [
+				'label' => 'Mail',
+				'rules' => 'required|email'
 			]  );
 		
 		if( $this->getData( $name = "admin" ) === true ){

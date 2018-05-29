@@ -8,7 +8,7 @@
 				{!! form_row( $form->name ) !!}
 			</div>
 			<div class="col-sm-6">
-				{!! form_row( $form->description ) !!}
+				{!! form_row( $form->email ) !!}
 			</div>
 		</div>
 		 {!! form_rest( $form ) !!}

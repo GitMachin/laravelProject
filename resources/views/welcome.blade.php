@@ -86,6 +86,7 @@
                     <a href="http://laravelproject.test/forms">Forms</a> 
                     <a href="http://laravelproject.test/carbons">Carbons</a> 
                     <a href="http://laravelproject.test/datatables">Datatables</a> 
+                    <a href="http://laravelproject.test/phpinfo">phpinfo</a> 
                 </div>
             </div>
         </div>
