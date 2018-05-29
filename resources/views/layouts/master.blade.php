@@ -24,7 +24,7 @@
 </head>
 <body> 
 <div class="container">
-	<h1>OreL... </h1>
+	<h1>Master Class Test Orel.. </h1>
     @yield('content')
 </div>
 

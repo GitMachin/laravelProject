@@ -2,7 +2,7 @@
 
 namespace App\Forms;
 
-use Kris\LaravelFormBuilder\Form;
+//use Kris\LaravelFormBuilder\Form;
 
 class UserForm extends Form 
 {

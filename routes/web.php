@@ -10,9 +10,25 @@
   | contains the "web" middleware group. Now create something great!
   |
  */
-Route::resource($name		 = 'posts', $controller	 = 'PostsController');
-Route::resource($name		 = 'users', $controller	 = 'UserController');
 
+/**
+ * POSTS
+ */
+Route::resource($name		 = 'posts', $controller	 = 'PostsController');
+Route::get('posts', 'PostsController@getList')->name('posts');
+Route::get('posts.data', 'PostsController@dtAjax')->name('posts.data');
+
+/**
+ * USERS
+ * @todo rename UserController -> UsersController
+ */
+Route::resource($name		 = 'users', $controller	 = 'UserController');
+Route::get('users', 'UserController@getList')->name('users');
+Route::get('users.data', 'UserController@dtAjax')->name('users.data');
+
+/**
+ * OTHERS ROUTES..
+ */
 Route::get('/', function () {
 	return view('welcome');
 });
@@ -32,11 +48,7 @@ Route::get('/carbons', function () {
 Route::get('/datatables', function () {
 	return view('datatables');
 });
-
-Route::get('users', 'UserController@getList')->name('users');
-Route::get('users.data', 'UserController@dtAjax')->name('users.data');
-
-
+ 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

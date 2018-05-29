@@ -82,14 +82,21 @@
                     Datatables
                 </div>
 
+                <div class="links">  
+                    <a href="https://github.com/yajra/laravel-datatables">Doc</a> 
+				</div> 
                
+                <div class=" ">
+					<h2>Form TEST</h2>
+					
+					
                 <div class="links">
                     <a href="http://laravelproject.test/users">Users</a> 
-					
-                    <a href="https://github.com/yajra/laravel-datatables">Doc</a> 
-					
+                    <a href="http://laravelproject.test/posts">Posts</a>  
                 </div>
             </div>
+            </div>
+			
         </div>
     </body>
 </html>

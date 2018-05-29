@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Http\Requests;
 use App\Models\UsersConnexion;
 use App\User;
@@ -38,8 +39,8 @@ class UserController extends Controller {
 	public function update(User $user) {  
 		$form = $this->getForm( $user );
 		$form->redirectIfNotValid(); 
-		$form->save();
-		return redirect()->route('users.index');
+		$form->getModel()->save();
+		return redirect()->route('users');
 	}
 
 	public function destroy($id) {
@@ -84,7 +85,7 @@ class UserController extends Controller {
 //		$post->setAttribute($key, $post);
 
 		$form->getModel()->save();
-		return redirect()->route('users.index');
+		return redirect()->route('users');
 	}
 	
 	/**
@@ -102,9 +103,36 @@ class UserController extends Controller {
 	 * @return \Illuminate\Http\JsonResponse
 	 */
 	public function dtAjax() {
-		$query = User::leftJoin('users_connexions AS connexions', 'users.id', '=', 'connexions.user_id')
+		$queryUser = User::leftJoin('users_connexions AS connexions', 'users.id', '=', 'connexions.user_id')
 			->select('users.*', 'connexions.date_connexion AS date_co');
-		return Datatables::of($query)->make(true);
+		
+					Carbon::setLocale('fr');
+		 
+        return Datatables::of($queryUser)
+            ->addColumn('action', function ($queryUser) {
+                return '<a href="users/'.$queryUser->id.'/edit" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
+            })
+           ->editColumn('id', 'ID: {{$id}}')
+				
+            ->editColumn('created_at', function ($queryUser) {
+                return $queryUser->created_at ? with(new Carbon($queryUser->created_at))->format('d/m/Y') : '';
+            })
+            ->editColumn('updated_at', function ($queryUser) {
+                return $queryUser->updated_at ? with(new Carbon($queryUser->updated_at))->format('d/m/Y') : '';;
+            })
+            ->editColumn('date_co', function ($queryUser) {
+                return $queryUser->date_co ? with(new Carbon($queryUser->date_co))->diffForHumans() : '';;
+            })
+            ->filterColumn('created_at', function ($queryUser, $keyword) {
+                $queryUser->whereRaw("DATE_FORMAT(created_at,'%d/%m/%Y') like ?", ["%$keyword%"]);
+            })
+            ->filterColumn('updated_at', function ($queryUser, $keyword) {
+                $queryUser->whereRaw("DATE_FORMAT(updated_at,'%d/%m/%Y') like ?", ["%$keyword%"]);
+            })
+            ->filterColumn('date_co', function ($queryUser, $keyword) {
+                $queryUser->whereRaw("DATE_FORMAT(date_co,'%d/%m/%Y') like ?", ["%$keyword%"]);
+            })
+            ->make(true);
 	}
 
 }

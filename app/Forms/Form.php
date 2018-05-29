@@ -8,7 +8,6 @@ class Form extends \Kris\LaravelFormBuilder\Form {
 	
 public function  buildForm()
     {
-	
 		if( $this->getModel() && $this->getModel()->id){
 			$method = "PUT";
 			$url = route($name = $this->resource . ".update", $this->getModel()->id );
@@ -21,7 +20,7 @@ public function  buildForm()
 			'method' => $method,
 			'url' => $url
 		];
-		
+		 
 		parent::buildForm( );
 }
 
