@@ -13,7 +13,7 @@ class PostForm extends Form
 		parent::buildForm( );
 		
         $this
-			->add($name ='name', $type='text', [
+			->add($name ='name', $type='special', [
 				'label' => 'Titre',
 				'rules' => 'required|min:5'
 			]  )

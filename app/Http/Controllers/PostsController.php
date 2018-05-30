@@ -27,16 +27,16 @@ class PostsController extends Controller {
 		
 	}
 
-	public function show($id) {
+	public function show( $id ) {
 		
 	}
 
-	public function edit( Post $post) { 
+	public function edit( Post $post ) { 
 		$form = $this->getForm(  $post ); 
 		return view($name = 'posts.edit', compact("form"));
 	}
 
-	public function update( Post $post) {  
+	public function update( Post $post ) {  
 		$form = $this->getForm( $post );
 		$form->redirectIfNotValid(); 
 		$form->getModel()->save();
@@ -45,7 +45,7 @@ class PostsController extends Controller {
 	}
 
 
-	public function destroy($id) {
+	public function destroy( $id ) {
 		
 	}
 
