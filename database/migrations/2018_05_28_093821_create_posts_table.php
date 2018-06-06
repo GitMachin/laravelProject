@@ -18,6 +18,13 @@ class CreatePostsTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->timestamps();
+			
+			$table->unsignedInteger('updated_by');
+			$table->unsignedInteger('created_by');
+
+			$table->foreign('updated_by')->references('id')->on('users');
+			$table->foreign('created_by')->references('id')->on('users'); //  ->onDelete('cascade');
+	 
         });
     }
 
