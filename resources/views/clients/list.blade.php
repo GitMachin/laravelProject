@@ -7,7 +7,7 @@
 		sinon <br />
 		{{  $html  }} 
 @endsection
- 
+  
 
 @section('footer') 
 <p> 

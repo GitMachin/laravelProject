@@ -7,8 +7,12 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 class Kernel extends HttpKernel
 {
     /**
+	 * 
+	 * Globaux fonctionne sur toute les routes 
+	 * ex: nettoyage de caractaires, balise php,...
+	 * 
+	 * 
      * The application's global HTTP middleware stack.
-     *
      * These middleware are run during every request to your application.
      *
      * @var array
@@ -19,9 +23,16 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
+		
+		// gestion du multi langue
+		 \App\Http\Middleware\MonFiltre::class, // Langue par exemple en fct du user
     ];
 
     /**
+	 * Pour les groupes de routes
+	 * ex: sur la group clients
+	 * 
+	 * 
      * The application's route middleware groups.
      *
      * @var array
@@ -44,8 +55,9 @@ class Kernel extends HttpKernel
     ];
 
     /**
+	 * Sapplique que sur une route a la fois
+	 * 
      * The application's route middleware.
-     *
      * These middleware may be assigned to groups or used individually.
      *
      * @var array
@@ -59,5 +71,8 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+		
+		// Validate de forms
+//		'validate' => \App\Http\Middleware\MonFiltre::class,
     ];
 }

@@ -9,7 +9,13 @@
    </head>
    <body>
        <h2>Page pour les clients</h2>
-
+	   <!-- Log out -->
+	   <form method="post" action="/logout">
+		   
+		{{ csrf_field() }}
+		   <button type="submit">logout</button>
+	   </form>
+	   
 	   {{ __('auth.failed') }}
 	   {{ __('auth.welcome', [ 'name' => "TEST"]) }}
 
@@ -17,7 +23,13 @@
            @yield('content')
        </main>
 
-
+	   <div>
+		   <h1>List</h1>
+		   <ul>
+			   @yield('list')
+		   </ul>
+	   </div>
+		
        <footer>
            @yield('footer')
        </footer>

@@ -83,6 +83,8 @@
                 </div>
 
                 <div class="links">
+                    <a href="http://laravelproject.test/clients">Clients (tp formation Laravel)</a> 
+					
                     <a href="http://laravelproject.test/forms">Forms</a> 
                     <a href="http://laravelproject.test/carbons">Carbons</a> 
                     <a href="http://laravelproject.test/datatables">Datatables</a> 

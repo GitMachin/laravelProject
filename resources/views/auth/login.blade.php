@@ -8,6 +8,13 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
+					<!-- message de session -->
+				   @if (session('message'))
+						<div>
+							{{ session('message') }}
+						</div>
+					@endif
+		
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
